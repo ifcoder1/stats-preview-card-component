@@ -121,6 +121,12 @@ main picture .overlay {
 }
 
 @media (max-width: 972px) {
+
+    body {
+        height: unset;
+        padding: 2em 2em 2em 2em;
+    }
+    
     main {
         display: flex;
         flex-direction: column;
