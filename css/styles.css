@@ -1,0 +1,166 @@
+:root {
+    /* main background */
+    --very-dark-blue: hsl(233, 47%, 7%);
+
+    /* card background */
+    --dark-desaturated-blue: hsl(244, 38%, 16%);
+
+    /* accent */
+    --soft-violet: hsl(277, 64%, 61%);
+
+    /* main heading, stats */
+    --white: hsl(0, 0%, 100%);
+
+    /* main paragraph */
+    --slighty-transparent-white: hsla(0, 0%, 100%, 0.75);
+
+    /* stat headings */
+    --slighty-transparent-white-2: hsla(0, 0%, 100%, 0.6);
+
+    --font-size: 15px;
+
+    --font-inter: 'Inter', sans-serif;
+
+    --font-lexend: 'Lexend Deca', sans-serif;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--very-dark-blue);
+    font-family: var(--font-inter);
+}
+
+main {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--dark-desaturated-blue);
+    color: var(--white);
+    border-radius: 0.6em 0 0 0.6em;
+}
+
+main .card {
+    padding: 4em 5.5em 4em 4em;
+    width: 50%;
+    padding-right: 5em;
+}
+
+
+main .card .heading-accent {
+    color: var(--soft-violet);
+}
+
+main .card p {
+    margin: 2em 0 5em 0;
+    font-size: var(--font-size);
+    color: var(--slighty-transparent-white);
+    line-height: 1.7
+}
+
+main .stats-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .stats {
+    display: flex;
+    flex-direction: column;
+}
+
+main .stats span:nth-of-type(1) {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin: 0 0 0.3em 0;
+}
+
+main .stats:last-of-type span:nth-of-type(1) {
+    text-transform: uppercase;
+}
+
+main .stats span:nth-of-type(2) {
+    text-transform: uppercase;
+    color: var(--slighty-transparent-white-2);
+    letter-spacing: 2px;
+    font-size: 0.7em;
+    font-family: var(--font-lexend)
+}
+
+main picture {
+    width: 50%;
+    position: relative;
+}
+
+main picture img {
+    width:100%;
+    height: 100%;
+    border-radius: 0 0.6em 0.6em 0;
+
+}
+
+main picture .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(277, 99%, 29%, 0.543);
+
+}
+
+@media (max-width: 972px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        width: unset;
+        border-radius: 0.9em 0.9em 0.9em 0.9em;
+    }
+
+    main picture {
+        order: 1;
+        width: unset;
+        height: 300px;
+        border-radius: 0.9em 0.9em 0 0;
+    }
+
+    main picture img {
+        border-radius: 0.9em 0.9em 0 0;
+    }
+
+    main picture .overlay {
+        border-radius: 0.9em 0.9em 0 0;
+    }
+
+    main .card {
+        order: 2;
+        width: unset;
+        padding: 2em;
+        text-align: center;
+        padding-bottom: 1em;
+    }
+
+    main .card p {
+        margin-bottom: 3em;
+    }
+
+    main .card .stats-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    main .card .stats {
+        margin-bottom: 2em;
+    }
+}
